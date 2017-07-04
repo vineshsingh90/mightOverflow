@@ -1,0 +1,25 @@
+//html
+<div>
+  <label class="mightOverflow"> sfsdfhsdjf sdjfhskjdhf kjdshfkjsdhfkjsdhf kjsdhfkjsdhf kjsdhf</label>
+</div>
+
+
+
+//js code
+$(document).ready(function () {
+    $(document).on('mouseenter', '.mightOverflow', function () {
+        var $this = $(this);
+        if (this.offsetWidth < this.scrollWidth && !$this.attr('title')) {
+            $this.attr('title', $this.text());
+        }
+    });
+});
+
+
+
+//css code
+.mightOverflow {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
